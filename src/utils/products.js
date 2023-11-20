@@ -51,10 +51,6 @@ export const serviceData = [
   },
 ];
 
-export const discoutProducts = [
-
-]
-
 export const products = [
   {
     id: "01",

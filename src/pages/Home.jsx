@@ -1,15 +1,12 @@
 import { Fragment } from "react";
 import Wrapper from "../components/wrapper/Wrapper";
 import Section from "../components/Section";
-import { products, discoutProducts } from "../utils/products";
+import { products } from "../utils/products";
 import SliderHome from "../components/Slider";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 import greenTea from "../Images/greenTea.jpg";
 
 const Home = () => {
-  const newArrivalData = products.filter(
-    (item) => item.category === "mobile" || item.category === "wireless"
-  );
   const bestSales = products.filter((item) => item.category === "tea");
   useWindowScrollToTop();
   return (
