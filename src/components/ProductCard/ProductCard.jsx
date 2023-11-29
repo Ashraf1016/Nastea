@@ -39,7 +39,11 @@ const ProductCard = ({ title, productItem }) => {
           <i className="fa fa-star"></i>
         </div>
         <div className="price">
+          <div className="d-flex align-items-center">
           <h4>${productItem.price}</h4>
+          <span className="strikethrough">${productItem.priceBeforeDiscount}</span>
+          </div>
+
           <button
             aria-label="Add"
             type="submit"

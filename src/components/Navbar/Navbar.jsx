@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Logo from "../../Images/logo2.png";
 const NavBar = () => {
   const { cartList } = useSelector((state) => state.cart);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const location = useLocation()
+  const pathname = location.pathname
   // fixed Header
+  console.log(pathname)
+  const hamburg = useRef()
   function scrollHandler() {
     if (window.scrollY >= 100) {
       setIsFixed(true);
@@ -23,6 +27,11 @@ const NavBar = () => {
   //     setCartItem(JSON.parse(storedCart));
   //   }
   // },[])
+
+const handleClick = () =>{
+  hamburg.current.click()
+}
+
   return (
     <Navbar
       fixed="top"
@@ -67,8 +76,9 @@ const NavBar = () => {
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={() => {
-              setExpand(expand ? false : "expanded");
+              setExpand(expand ? false : true);
             }}
+            ref={hamburg}
           >
             <span></span>
             <span></span>
@@ -82,7 +92,7 @@ const NavBar = () => {
                 aria-label="Go to Home Page"
                 className="navbar-link"
                 to="/"
-                onClick={() => setExpand(false)}
+                onClick={()=>location !== "/" && handleClick()}
               >
                 <span className="nav-link-label">Home</span>
               </Link>
@@ -93,7 +103,7 @@ const NavBar = () => {
                 aria-label="Go to Shop Page"
                 className="navbar-link"
                 to="/shop"
-                onClick={() => setExpand(false)}
+                onClick={()=>location !== "/shop" && handleClick()}
               >
                 <span className="nav-link-label">Shop</span>
               </Link>
@@ -104,7 +114,8 @@ const NavBar = () => {
                 aria-label="Go to Cart Page"
                 className="navbar-link"
                 to="/cart"
-                onClick={() => setExpand(false)}
+                onClick={()=>location !== "/cart" && handleClick()}
+
               >
                 <span className="nav-link-label">Cart</span>
               </Link>

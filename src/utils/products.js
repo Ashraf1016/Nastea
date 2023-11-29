@@ -1,5 +1,6 @@
 
-import product1 from "../Images/product1.png"
+import product2 from "../Images/teawhite.png"
+import product1 from "../Images/teared.png"
 import Tea1 from "../Images/teahand.png";
 import Tea2 from "../Images/tea2.png";
 
@@ -55,9 +56,10 @@ export const products = [
   {
     id: "01",
     productName: "Nastea pure natural tea powder (200gm)",
-    imgUrl: product1,
+    imgUrl: product2,
     category: "tea",
-    price: 193,
+    price: 240,
+    priceBeforeDiscount: 280,
     shortDesc:
       "Indulge in the pure essence of Nastea – your go-to brand for authentic, high-quality tea powder. Savor the goodness of fully organic blends, crafted for both taste and health. Elevate your tea experience with our delicious and wholesome offerings, carefully curated to bring you the finest in every sip.",
     description:
@@ -76,7 +78,8 @@ export const products = [
     productName: "Nastea pure natural tea powder (500gm)",
     imgUrl: product1,
     category: "tea",
-    price: 500,
+    price: 350,
+    priceBeforeDiscount: 400,
     shortDesc:
       "Indulge in the pure essence of Nastea – your go-to brand for authentic, high-quality tea powder. Savor the goodness of fully organic blends, crafted for both taste and health. Elevate your tea experience with our delicious and wholesome offerings, carefully curated to bring you the finest in every sip.",
     description:
